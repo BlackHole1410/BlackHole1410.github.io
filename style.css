@@ -1,0 +1,13 @@
+footer {
+    background-color: lightgray;
+}
+#h1{
+    color: white;
+    background-color: black;
+    text-align: center;
+}
+div{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: lightgray;
+}
