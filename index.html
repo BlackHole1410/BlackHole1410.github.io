@@ -1,41 +1,55 @@
 <!DOCTYPE html>
 <LINK rel="stylesheet" type="text/css" href="style.css">
 <html>
-    <head>
-        <script type="text/javascript">
-            function afficheVille() {
-            let nomVilleChoisie = document.getElementById('listeDeroul')
-            let villes = document.getElementById('nomVille')
-
+<head>
+    <script type="text/javascript">
+        function afficheVille() {
+            let nomVilleChoisie = document.getElementById('listeDeroul').value;
+            let villes = document.getElementsByClassName('nomVille');
+            for (let i = 0; i < villes.length; i++) {
+                if (villes[i].id.toLowerCase() === nomVilleChoisie.toLowerCase()) {
+                    villes[i].style.display = "";
+                } else {
+                    villes[i].style.display = "none";
+                }
             }
-        </script>
-        <meta charset="UTF-8">
-    </head>
-    <h1 id="h1">
-        TD n°1 Programmation web – Application météo
-    </h1>
-    <body>
+        }
+        window.onload = function() {
+            document.getElementById("listeDeroul").value = "niort";
+            afficheVille(); // Call the function to display weather info for Niort by default
+        };
+    </script>
+    <meta charset="UTF-8">
+</head>
+<h1 id="h1">
+    TD n°1 Programmation web – Application météo
+</h1>
+<body>
+    <p>Choisir une ville : 
         <select onchange="afficheVille()" name="ville" id="listeDeroul">
-
+            <option value="niort">Niort</option>
+            <option value="rio_de_janeiro">Rio de Janeiro</option>
+            <option value="reykjavik">Reykjavik</option>
         </select>
-        <div id="nomVille">
-            <h2>Niort</h2>
-            <p>12°, pluvieux</p>
-            <img src="pluvieux.png" width="5%"/>
-        </div>
-        <div id="nomVille">
-            <h2>Rio de Janeiro</h2>
-            <p>29°, orageux</p>
-            <img src="orageux.png" width="5%"/>
-        </div>
-        <div id="nomVille">
-            <h2>Reykjavik</h2>
-            <p>-10°, ensoleillé</p>
-            <img src="ensoleille.png" width="5%"/>
-        </div>
-    </body>
-    <footer>
-        <p>Nathan BIGOT</p>
-        <p>Icône météo par : <a href="https://thenounproject.com">Noun project</a></p>
-    </footer>
+    </p>
+    <div class="nomVille" id="Niort">
+        <h2>Niort</h2>
+        <p>12°, pluvieux</p>
+        <img src="pluvieux.png" width="5%"/>
+    </div>
+    <div class="nomVille" id="rio_de_janeiro">
+        <h2>Rio de Janeiro</h2>
+        <p>29°, orageux</p>
+        <img src="orageux.png" width="5%"/>
+    </div>
+    <div class="nomVille" id="Reykjavik">
+        <h2>Reykjavik</h2>
+        <p>-10°, ensoleillé</p>
+        <img src="ensoleille.png" width="5%"/>
+    </div>
+</body>
+<footer>
+    <p>Nathan BIGOT</p>
+    <p>Icône météo par : <a href="https://thenounproject.com">Noun project</a></p>
+</footer>
 </html>
