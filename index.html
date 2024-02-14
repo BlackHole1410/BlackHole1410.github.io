@@ -2,23 +2,7 @@
 <LINK rel="stylesheet" type="text/css" href="style.css">
 <html>
 <head>
-    <script type="text/javascript">
-        function afficheVille() {
-            let nomVilleChoisie = document.getElementById('listeDeroul').value;
-            let villes = document.getElementsByClassName('nomVille');
-            for (let i = 0; i < villes.length; i++) {
-                if (villes[i].id.toLowerCase() === nomVilleChoisie.toLowerCase()) {
-                    villes[i].style.display = "";
-                } else {
-                    villes[i].style.display = "none";
-                }
-            }
-        }
-        window.onload = function() {
-            document.getElementById("listeDeroul").value = "niort";
-            afficheVille(); // Call the function to display weather info for Niort by default
-        };
-    </script>
+    <script src="td1.js"></script>
     <meta charset="UTF-8">
 </head>
 <h1 id="h1">
