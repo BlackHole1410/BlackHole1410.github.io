@@ -1,39 +1,23 @@
 <!DOCTYPE html>
-<LINK rel="stylesheet" type="text/css" href="style.css">
-<html>
+<html lang="en">
 <head>
-    <script src="td1.js"></script>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<h1 id="h1">
-    TD n°1 Programmation web – Application météo
-</h1>
 <body>
-    <p>Choisir une ville : 
-        <select onchange="afficheVille()" name="ville" id="listeDeroul">
-            <option value="niort">Niort</option>
-            <option value="rio_de_janeiro">Rio de Janeiro</option>
-            <option value="reykjavik">Reykjavik</option>
-        </select>
-    </p>
-    <div class="nomVille" id="Niort">
-        <h2>Niort</h2>
-        <p>12°, pluvieux</p>
-        <img src="pluvieux.png" width="5%"/>
-    </div>
-    <div class="nomVille" id="rio_de_janeiro">
-        <h2>Rio de Janeiro</h2>
-        <p>29°, orageux</p>
-        <img src="orageux.png" width="5%"/>
-    </div>
-    <div class="nomVille" id="Reykjavik">
-        <h2>Reykjavik</h2>
-        <p>-10°, ensoleillé</p>
-        <img src="ensoleille.png" width="5%"/>
-    </div>
+    <h1>Weather App</h1>
+    <p>Choisir une ville:</p>
+    <select id="citySelect" onchange="getWeather()">
+        <option value="niort">Niort</option>
+        <option value="paris">Paris</option>
+        <option value="poitiers">Poitiers</option>
+    </select>
+    <div id="weatherInfo"></div>
+    <script src="td1.js"></script>
+    <footer>
+        BIGOT Nathan
+    </footer>
 </body>
-<footer>
-    <p>Nathan BIGOT</p>
-    <p>Icône météo par : <a href="https://thenounproject.com">Noun project</a></p>
-</footer>
 </html>
